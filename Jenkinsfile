@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'Maven3'
-        jdk 'Java17'
-    }
-
     stages {
 
         stage('Checkout Code') {
@@ -16,7 +11,7 @@ pipeline {
 
         stage('Run No_Parallel Suite') {
             steps {
-                sh "mvn clean test -Dxmlfiles=No_Parallel.xml"
+                bat "mvn clean test -Dxmlfiles=No_Parallel.xml"
             }
         }
 
